@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RaportoKosova | Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html"><span class="brand-mark">RK</span><span>RaportoKosova</span></a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="report.html">Raporto</a>
+        <a class="active" href="dashboard.html">Dashboard</a>
+        <a href="contact.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell container">
+    <section class="page-header compact">
+      <p class="eyebrow">Pamje administrative</p>
+      <h1>Dashboard i raportimeve</h1>
+      <p class="section-copy">Filtroni sipas komunes, kategorise dhe statusit per te ndjekur raportet ne menyre me te organizuar.</p>
+    </section>
+    <section class="metrics-grid">
+      <article class="metric-card"><span>Te gjitha</span><strong id="allCount">0</strong></article>
+      <article class="metric-card"><span>Pending</span><strong id="pendingCount">0</strong></article>
+      <article class="metric-card"><span>Ne verifikim</span><strong id="reviewCount">0</strong></article>
+      <article class="metric-card"><span>Zgjidhur</span><strong id="resolvedCount">0</strong></article>
+    </section>
+    <section class="glass-card dashboard-card">
+      <div class="field-grid four filters-row">
+        <label>Komuna<select id="filterMunicipality"></select></label>
+        <label>Kategoria<select id="filterCategory"></select></label>
+        <label>Statusi<select id="filterStatus"></select></label>
+        <label>Kerkim<input type="text" id="searchInput" placeholder="Kerko sipas titullit ose lokacionit" /></label>
+      </div>
+      <div class="toolbar-row">
+        <p class="section-copy small-copy">Ndrysho statusin direkt ose fshij raportin nga lista.</p>
+        <button id="clearAllReports" class="btn btn-secondary" type="button">Pastro krejt</button>
+      </div>
+      <div id="reportsContainer" class="reports-list"></div>
+    </section>
+  </main>
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

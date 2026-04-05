@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RaportoKosova | Raporto Problemin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html"><span class="brand-mark">RK</span><span>RaportoKosova</span></a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a class="active" href="report.html">Raporto</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="contact.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell container">
+    <section class="page-header">
+      <p class="eyebrow">Raportim i strukturuar</p>
+      <h1>Raporto nje problem ne komunen tende</h1>
+      <p class="section-copy">Ploteso formen me poshte. Raporti ruhet ne browser per demo, merr ID unike dhe shfaqet automatikisht ne dashboard.</p>
+    </section>
+    <section class="form-layout">
+      <article class="glass-card form-card">
+        <form id="reportForm" class="report-form">
+          <div class="field-grid two">
+            <label>Emri i plote<input type="text" id="fullName" placeholder="Shkruaj emrin" /></label>
+            <label>Email<input type="email" id="email" placeholder="Shkruaj emailin" /></label>
+          </div>
+          <div class="field-grid two">
+            <label>Komuna<select id="municipality"></select></label>
+            <label>Kategoria<select id="category"></select></label>
+          </div>
+          <div class="field-grid two">
+            <label>Lokacioni<input type="text" id="location" placeholder="p.sh. Mati 1, rruga B" /></label>
+            <label>Prioriteti<select id="priority"></select></label>
+          </div>
+          <div class="field-grid two">
+            <label>Numri i telefonit<input type="tel" id="phone" placeholder="Shkruaj numrin kontaktues" /></label>
+            <label>Lloji i lokacionit<select id="locationType"></select></label>
+          </div>
+          <label>Titulli i problemit<input type="text" id="title" placeholder="Shkruaj nje titull te qarte" /></label>
+          <label>Pershkrimi<textarea id="description" rows="6" placeholder="Pershkruaj problemin me sa me shume detaje..."></textarea></label>
+          <label>Foto ose prove<input type="file" id="imageFile" accept="image/*" capture="environment" /></label>
+          <div class="image-preview-shell">
+            <p class="preview-label">Preview i fotos</p>
+            <img id="imagePreview" class="image-preview" alt="Preview e fotos se raportimit" />
+            <p id="imageMeta" class="image-meta">Mund te besh foto direkt nga telefoni ose ta zgjedhesh nga files.</p>
+          </div>
+          <div class="report-summary" id="reportSummary">Raporti yt do te marre status fillestar <strong>Pending</strong>.</div>
+          <button class="btn btn-primary" type="submit">Ruaj Raportin</button>
+          <p id="formMessage" class="form-message"></p>
+        </form>
+      </article>
+      <aside class="glass-card side-card">
+        <p class="eyebrow">Kategorite</p>
+        <div id="categoryPreview" class="mini-list"></div>
+        <div class="side-note compact-note"><h3>Per cfare sherben ky version?</h3><p>Demo me localStorage, foto, ID unike, filtrime ne dashboard dhe liste emergjence.</p></div>
+        <div class="side-note emergency-note"><h3>Urgjenca te shpejta</h3><div id="reportEmergencyGrid" class="mini-emergency-list"></div></div>
+      </aside>
+    </section>
+  </main>
+  <script src="data.js"></script>
+  <script src="report.js"></script>
+</body>
+</html>

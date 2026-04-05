@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RaportoKosova | Kontakt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html"><span class="brand-mark">RK</span><span>RaportoKosova</span></a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="report.html">Raporto</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a class="active" href="contact.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell container">
+    <section class="page-header compact">
+      <p class="eyebrow">Kontakt</p>
+      <h1>Lidhe qytetarin me institucionin</h1>
+      <p class="section-copy">Kjo faqe mund te pershtatet per komuna, OJQ, media ose startup qe duan nje platforme raportimi dhe monitorimi.</p>
+    </section>
+    <section class="contact-grid">
+      <article class="glass-card contact-card"><h3>Email</h3><p>support@raportokosova.com</p></article>
+      <article class="glass-card contact-card"><h3>Telefoni</h3><p>+383 44 000 111</p></article>
+      <article class="glass-card contact-card"><h3>Adresa</h3><p>Prishtine, Kosove</p></article>
+      <article class="glass-card contact-card"><h3>Perdorimi</h3><p>Demo frontend per prezantim, portfolio, media dhe validim ideje.</p></article>
+    </section>
+    <section class="glass-card emergency-section">
+      <div><p class="eyebrow">Numrat emergjent</p><h2>Kontakte te rendesishme per raste urgjente</h2></div>
+      <div id="contactEmergencyGrid" class="emergency-grid"></div>
+    </section>
+  </main>
+  <script src="data.js"></script>
+  <script>
+    document.getElementById('contactEmergencyGrid').innerHTML = appData.emergencyContacts.map((item) => `\n<article class="emergency-card"><strong>${item.name}</strong><a href="tel:${item.number}">${item.number}</a><p>${item.note}</p></article>`).join('');
+  </script>
+</body>
+</html>

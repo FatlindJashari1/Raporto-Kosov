@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RaportoKosova | Raporto Problemet e Qytetit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html"><span class="brand-mark">RK</span><span>RaportoKosova</span></a>
+      <nav class="site-nav">
+        <a class="active" href="index.html">Home</a>
+        <a href="report.html">Raporto</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="contact.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero-section container">
+      <div class="hero-copy">
+        <p class="eyebrow">Platforme qytetare per Kosoven</p>
+        <h1>Raporto problemet e terrenit dhe lidhi qytetaret me institucionet.</h1>
+        <p class="hero-text">RaportoKosova eshte nje platforme demo per raportimin e problemeve publike ne te gjitha komunat e Kosoves. Qytetaret mund te raportojne rruge te demtuara, ndricim publik, mbeturina, kanalizime, siguri publike dhe ceshtje te tjera me foto, prioritet dhe lokacion.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="report.html">Raporto Tani</a>
+          <a class="btn btn-secondary" href="dashboard.html">Shih Dashboard</a>
+        </div>
+        <div class="hero-trust"><span>Te gjitha komunat</span><span>Foto dhe status</span><span>Numrat emergjent</span></div>
+      </div>
+      <aside class="hero-panel">
+        <div class="panel-topline">Live Preview</div>
+        <div class="signal-row"><div class="signal success"></div><p>Raportet ruhen, filtrohen dhe menaxhohen me status ne nje dashboard te qarte.</p></div>
+        <div class="preview-list">
+          <article class="preview-card"><span class="chip chip-danger">Urgjente</span><h3>Aksident te rruga e qytetit</h3><p>Prishtine, Lakrishte</p></article>
+          <article class="preview-card"><span class="chip chip-warning">Ne verifikim</span><h3>Ndricim publik jashte funksionit</h3><p>Peje, Qender</p></article>
+          <article class="preview-card"><span class="chip chip-success">Zgjidhur</span><h3>Mbeturina te pa larguara</h3><p>Prizren, Bazhdarhane</p></article>
+        </div>
+      </aside>
+    </section>
+    <section class="container stats-grid">
+      <article class="stat-card"><strong>38</strong><span>Komuna te perfshira</span></article>
+      <article class="stat-card"><strong>8</strong><span>Kategori raportimi</span></article>
+      <article class="stat-card"><strong>24/7</strong><span>Qasje nga telefoni ose laptopi</span></article>
+      <article class="stat-card"><strong>1</strong><span>Pike qendrore per raportim</span></article>
+    </section>
+    <section class="container content-slab two-column">
+      <div><p class="eyebrow">Si funksionon</p><h2>Tre hapa te thjeshte per raportim me me shume vlere publike.</h2></div>
+      <div class="steps-list">
+        <article class="step-card"><span>01</span><h3>Raporto problemin</h3><p>Qytetari zgjedh komunen, kategorine, lokacionin, prioritetin dhe ngarkon foto nga telefoni ose files.</p></article>
+        <article class="step-card"><span>02</span><h3>Ruaje dhe strukturoje</h3><p>Raporti merr ID unike, status fillestar dhe shfaqet ne dashboard per monitorim te organizuar.</p></article>
+        <article class="step-card"><span>03</span><h3>Ndrysho statusin</h3><p>Raportet filtrohen sipas komunes, kategorise, statusit dhe mund te ndiqen deri ne zgjidhje.</p></article>
+      </div>
+    </section>
+    <section class="container content-slab impact-grid">
+      <article class="impact-card"><h3>Per qytetaret</h3><p>Raportim me i qarte, me i shpejte dhe me prove vizuale ne nje vend te vetem.</p></article>
+      <article class="impact-card"><h3>Per institucionet</h3><p>Menaxhim me i organizuar i rasteve sipas komunes, urgjences dhe statusit te trajtimit.</p></article>
+      <article class="impact-card"><h3>Per media dhe OJQ</h3><p>Nje menyre me e strukturuar per me identifiku dhe percjelle ceshtje me interes publik.</p></article>
+    </section>
+    <section class="container emergency-strip glass-card">
+      <div><p class="eyebrow">Urgjenca</p><h2>Numrat emergjent ne nje vend</h2></div>
+      <div id="homeEmergencyGrid" class="emergency-grid"></div>
+    </section>
+  </main>
+  <script src="data.js"></script>
+  <script>
+    document.getElementById('homeEmergencyGrid').innerHTML = appData.emergencyContacts.map((item) => `\n<article class="emergency-card"><strong>${item.name}</strong><a href="tel:${item.number}">${item.number}</a><p>${item.note}</p></article>`).join('');
+  </script>
+</body>
+</html>
